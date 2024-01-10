@@ -1,0 +1,16 @@
+<button class="create-button" (click)="navigateToCreate()">Create Product</button>
+<app-tag-select></app-tag-select>
+<button class="clear-button" (click)="clearTags()">Clear Tags</button>
+
+<ul class="product-list">
+  <li *ngFor="let product of filteredProducts$ | async" class="product-list__item"
+    (click)="navigateToProduct(product.id!)">
+    <div class="product-name">{{ product.name }}</div>
+    <div class="product-description">Description: {{ product.description }}</div>
+    <div class="product-price">Price:  {{ product.price }}$</div>
+    <h3>Tags List:</h3>
+    <app-tag-list [tags]="product.tags"></app-tag-list>
+
+    <button class="remove-button" (click)="removeItem(product.id)">X</button>
+  </li>
+</ul>

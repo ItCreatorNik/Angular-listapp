@@ -1,0 +1,10 @@
+<!-- <select class="custom-select" *ngIf="tags$ | async as tags" multiple [(ngModel)]="selectedTags" (change)="onTagSelectionChange()">
+  <option class="custom-option" [ngValue]="null" selected>All</option>
+  <option *ngFor="let tag of tags" class="custom-option" [ngValue]="tag">{{ tag.name }}</option>
+</select> -->
+
+<select class="custom-select" *ngIf="tags$ | async as tags" multiple [(ngModel)]="selectedTags"
+  (change)="onTagSelectionChange()">
+  <option class="custom-option" [ngValue]="null" selected>All</option>
+  <option *ngFor="let tag of tags" class="custom-option" [ngValue]="tag">{{ tag.name }}</option>
+</select>

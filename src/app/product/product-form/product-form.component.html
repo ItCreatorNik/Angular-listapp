@@ -1,0 +1,21 @@
+<button class="back-button" (click)="goBack()">Back</button>
+
+<div class="task-form">
+  <form>
+    <input type="text" name="name" [(ngModel)]="newProduct.name" placeholder="Name">
+    <textarea name="description" [(ngModel)]="newProduct.description" placeholder="Description"></textarea>
+    <input type="number" [(ngModel)]="newProduct.price" name="price" placeholder="Price">
+    <input type="text" [(ngModel)]="newTag.name" name="tagName" placeholder="Tag name">
+    <p>Select tag color:</p>
+    <input type="color" [(ngModel)]="newTag.color" name="tagColor" placeholder="Tag color">
+    <button (click)="handleTag()"  class="button">{{ isTagEdit ? 'Edit Tag': 'Add Tag' }}</button>
+    <ul>
+      <li *ngFor="let tag of newProduct.tags; let i = index">
+        <p [style.background]="tag.color" class="tag">{{ tag.name }}</p>
+        <button (click)="editTag(tag.id)" class="button-edit">edit</button>
+        <button (click)="removeTag(tag.id)" class="button-delete">X</button>
+      </li>
+    </ul>
+    <button (click)="handleProduct()"  class="button">{{ isEdit ? 'Edit product': 'Add product' }}</button>
+  </form>
+</div>

@@ -1,0 +1,5 @@
+<ul class="tag-list">
+  <li *ngFor="let tag of tags; let i = index" class="tag-list__item">
+    <span class="tag" [style.background]="tag.color">{{ tag.name }}</span>
+  </li>
+</ul>

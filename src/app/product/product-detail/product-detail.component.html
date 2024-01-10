@@ -1,0 +1,10 @@
+<button class="back-button" (click)="goBack()">Back</button>
+
+<div class="task-detail" *ngIf="product">
+  <h2>{{ product.name }}</h2>
+  <p>Description: {{ product.description }}</p>
+  <p>Price: {{ product.price }}$</p>
+  <span>Product tags: </span><app-tag-list [tags]="product.tags" class="tag-list" />
+  <button (click)="editProduct(product.id!)" class="edit-button">Edit</button>
+</div>
+
